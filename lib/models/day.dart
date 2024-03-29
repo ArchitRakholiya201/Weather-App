@@ -1,3 +1,4 @@
+import 'package:weather_app/models/air_quality.dart';
 import 'package:weather_app/models/condition.dart';
 
 class Day {
@@ -21,6 +22,7 @@ class Day {
   final int dailyChanceOfSnow;
   final Condition condition;
   final double uv;
+  final AirQuality airQuality;
 
   Day({
     required this.maxTempC,
@@ -43,6 +45,7 @@ class Day {
     required this.dailyChanceOfSnow,
     required this.condition,
     required this.uv,
+    required this.airQuality,
   });
 
   factory Day.fromJson(Map<String, dynamic> json) => Day(
@@ -66,5 +69,6 @@ class Day {
         dailyChanceOfSnow: json['daily_chance_of_snow'],
         condition: Condition.fromJson(json['condition']),
         uv: json['uv'],
+        airQuality: AirQuality.fromJson(json['air_quality']),
       );
 }

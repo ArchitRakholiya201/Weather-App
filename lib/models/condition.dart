@@ -11,7 +11,8 @@ class Condition {
 
   factory Condition.fromJson(Map<String, dynamic> json) => Condition(
         text: json['text'],
-        icon: json['icon'],
+        icon:
+            'assets/images/${(json['icon']?.toString() ?? '').split('64/').last}',
         code: json['code'],
       );
 }

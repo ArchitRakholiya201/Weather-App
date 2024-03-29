@@ -1,3 +1,4 @@
+import 'package:weather_app/models/air_quality.dart';
 import 'package:weather_app/models/condition.dart';
 
 class Hour {
@@ -9,9 +10,12 @@ class Hour {
   final Condition condition;
   final double windMph;
   final double windKph;
+  final int windDegree;
   final String windDir;
   final double pressureMb;
   final double pressureIn;
+  final double precipMm;
+  final double precipIn;
   final double snowCm;
   final int humidity;
   final int cloud;
@@ -34,6 +38,7 @@ class Hour {
   final double uv;
   final double shortRad;
   final double diffRad;
+  final AirQuality airQuality;
 
   Hour({
     required this.timeEpoch,
@@ -44,9 +49,12 @@ class Hour {
     required this.condition,
     required this.windMph,
     required this.windKph,
+    required this.windDegree,
     required this.windDir,
     required this.pressureMb,
     required this.pressureIn,
+    required this.precipMm,
+    required this.precipIn,
     required this.snowCm,
     required this.humidity,
     required this.cloud,
@@ -69,6 +77,7 @@ class Hour {
     required this.uv,
     required this.shortRad,
     required this.diffRad,
+    required this.airQuality,
   });
 
   factory Hour.fromJson(Map<String, dynamic> json) => Hour(
@@ -80,9 +89,12 @@ class Hour {
         condition: Condition.fromJson(json['condition']),
         windMph: json['wind_mph'],
         windKph: json['wind_kph'],
+        windDegree: json['wind_degree'],
         windDir: json['wind_dir'],
         pressureMb: json['pressure_mb'],
         pressureIn: json['pressure_in'],
+        precipMm: json['precip_mm'],
+        precipIn: json['precip_in'],
         snowCm: json['snow_cm'],
         humidity: json['humidity'],
         cloud: json['cloud'],
@@ -105,5 +117,6 @@ class Hour {
         uv: json['uv'],
         shortRad: json['short_rad'],
         diffRad: json['diff_rad'],
+        airQuality: AirQuality.fromJson(json['air_quality']),
       );
 }

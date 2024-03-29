@@ -14,7 +14,7 @@ class Api {
     try {
       final response = await http.get(
         Uri.parse(
-            '$baseUrl/forecast.json?key=$apiKey&q=$latitude, $longitude&days=1&aqi=no&alerts=no'),
+            '$baseUrl/forecast.json?key=$apiKey&q=$latitude, $longitude&days=7&aqi=yes&alerts=yes'),
       );
       print('====>>>> ${response.statusCode}');
       print('====>>>> ${response.body}');

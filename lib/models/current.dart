@@ -1,3 +1,4 @@
+import 'package:weather_app/models/air_quality.dart';
 import 'package:weather_app/models/condition.dart';
 
 class Current {
@@ -24,6 +25,7 @@ class Current {
   final double uv;
   final double gustMph;
   final double gustKph;
+  final AirQuality airQuality;
 
   Current({
     required this.lastUpdatedEpoch,
@@ -49,6 +51,7 @@ class Current {
     required this.uv,
     required this.gustMph,
     required this.gustKph,
+    required this.airQuality,
   });
 
   factory Current.fromJson(Map<String, dynamic> json) => Current(
@@ -77,5 +80,6 @@ class Current {
         windDir: json['wind_dir'],
         windKph: json['wind_kph'],
         windMph: json['wind_mph'],
+        airQuality: AirQuality.fromJson(json['air_quality']),
       );
 }
