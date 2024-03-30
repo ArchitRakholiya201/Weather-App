@@ -14,6 +14,7 @@ class CurrentWeatherDetails extends StatefulWidget {
 
 class _CurrentWeatherDetailsState extends State<CurrentWeatherDetails> {
   Color containerColor = Colors.transparent;
+  Color shadowColor = Colors.transparent;
 
   @override
   void initState() {
@@ -21,7 +22,10 @@ class _CurrentWeatherDetailsState extends State<CurrentWeatherDetails> {
     WidgetsBinding.instance.addPostFrameCallback(
       (_) async {
         await Future.delayed(const Duration(milliseconds: 400));
-        setState(() => containerColor = AppColors.catalinaBlue);
+        setState(() {
+          containerColor = AppColors.catalinaBlue;
+          shadowColor = Colors.white.withOpacity(0.05);
+        });
       },
     );
   }
@@ -143,23 +147,24 @@ class _CurrentWeatherDetailsState extends State<CurrentWeatherDetails> {
             margin: const EdgeInsets.symmetric(horizontal: 40),
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                color: containerColor,
-                gradient: const LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    AppColors.cetaceanBlue,
-                    AppColors.catalinaBlue,
-                  ],
+              borderRadius: BorderRadius.circular(16),
+              color: containerColor,
+              gradient: const LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  AppColors.cetaceanBlue,
+                  AppColors.catalinaBlue,
+                ],
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: shadowColor,
+                  blurRadius: 4,
+                  offset: const Offset(4, 4),
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.white.withOpacity(0.05),
-                    blurRadius: 4,
-                    offset: const Offset(4, 4),
-                  ),
-                ]),
+              ],
+            ),
             curve: Curves.ease,
             duration: const Duration(milliseconds: 2000),
             child: Row(

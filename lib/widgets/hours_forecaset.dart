@@ -34,53 +34,63 @@ class _HoursForecastState extends ConsumerState<HoursForecast> {
           child: Row(
             children: [
               const SizedBox(width: 4),
-              Text(
-                'Today',
-                style: GoogleFonts.poppins(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.white,
+              SlideAnimation(
+                duration: 800,
+                delay: 200,
+                startOffset: const Offset(-2, 0),
+                child: Text(
+                  'Today',
+                  style: GoogleFonts.poppins(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.white,
+                  ),
                 ),
               ),
               const Spacer(),
-              Material(
-                color: Colors.transparent,
-                elevation: 0,
-                child: InkWell(
-                  splashColor: AppColors.cetaceanBlue.withOpacity(0.1),
-                  highlightColor: AppColors.cetaceanBlue.withOpacity(0.1),
-                  focusColor: AppColors.cetaceanBlue.withOpacity(0.1),
-                  borderRadius: BorderRadius.circular(4),
-                  onTap: () {
-                    provider.selectedDay = provider
-                        .forecastData!.foreCast.forecastDay.first.date.day;
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => const FutureForecastScreen(),
-                      ),
-                    );
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Next 7 Days',
-                          style: GoogleFonts.poppins(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white,
+              SlideAnimation(
+                duration: 800,
+                delay: 200,
+                startOffset: const Offset(2, 0),
+                child: Material(
+                  color: Colors.transparent,
+                  elevation: 0,
+                  child: InkWell(
+                    splashColor: AppColors.cetaceanBlue.withOpacity(0.1),
+                    highlightColor: AppColors.cetaceanBlue.withOpacity(0.1),
+                    focusColor: AppColors.cetaceanBlue.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(4),
+                    onTap: () {
+                      provider.selectedDay = provider
+                          .forecastData!.foreCast.forecastDay.first.date.day;
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const FutureForecastScreen(),
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            'Next 7 Days',
+                            style: GoogleFonts.poppins(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
-                        const SizedBox(width: 8),
-                        const Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Colors.white,
-                          size: 12,
-                        ),
-                      ],
+                          const SizedBox(width: 8),
+                          const Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            color: Colors.white,
+                            size: 12,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
