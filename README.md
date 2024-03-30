@@ -1,20 +1,31 @@
-# weather_app
+# Flutter Weather App
+A simple weather app built with Flutter that provides users with current weather information and a 7-day forecast. The app features two screens:
 
-A new Flutter project.
+1. Home Screen: Displays the current weather conditions along with the 24-hour weather forecast for today.
+2. 7-Day Forecast Screen: Shows the weather forecast for the next 7 days.
 
-## Getting Started
+# Features
+- Location-based Weather: Fetches weather data based on the user's current location.
+- WeatherAPI Integration: Utilizes the WeatherAPI's APIs to fetch weather information.
+- State Management: Uses flutter_riverpod for state management.
+- Animations: Includes animations to enhance the user experience on both screens.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Video
+https://github.com/ArchitRakholiya201/Weather-App/assets/162776125/eae10630-5099-4126-adeb-962e2a168614
 
 ## Screenshots
+<img src="https://github.com/ArchitRakholiya201/Weather-App/blob/main/assets/app/home_screen.jpg?raw=true" width="260"> <img src="https://github.com/ArchitRakholiya201/Weather-App/blob/main/assets/app/next_days_screen.jpg?raw=true" width="260">
 
-| ![Imgur](https://github.com/ArchitRakholiya201/Weather-App/blob/main/assets/app/home_screen.jpg?raw=true) 	| ![Imgur](https://github.com/ArchitRakholiya201/Weather-App/blob/main/assets/app/next_days_screen.jpg?raw=true) 	| ![Imgur](https://github.com/ArchitRakholiya201/Weather-App/blob/main/assets/app/weather_app.mp4?raw=true) 	|
+# Getting Started
+To get started with the app, follow these steps:
+
+# Clone the repository.
+Open the project in your favorite Flutter IDE.
+Run the app on an emulator or physical device.
+
+# Dependencies
+The app uses the following dependencies:
+
+* flutter_riverpod for state management.
+* http for making API requests.
+* geolocator for accessing the user's location.
