@@ -4,6 +4,8 @@ class AppColors {
   static const oxfordBlue = Color(0xFF0D1852);
   static const egyptianBlue = Color(0xFF1B33A8);
   static const royalBlue = Color(0xFF3F62DB);
+  static const unitedNationsBlue = Color(0xFF5289df);
+  static const blueYonder = Color(0xFF5170b0);
   static const violetBlue = Color(0xFF2A4CAC);
   static const pigmentBlue = Color(0xFF2B369B);
   static const slateBlue = Color(0xFF6576E2);

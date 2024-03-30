@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class SlideAnimation extends StatefulWidget {
   const SlideAnimation({
-    Key? key,
+    super.key,
     this.delay = 0,
     required this.child,
     this.startOffset = const Offset(0, 1),
     this.duration = 600,
-  }) : super(key: key);
+  });
 
   final int delay;
   final Widget child;
@@ -31,6 +31,7 @@ class _SlideAnimationState extends State<SlideAnimation>
     );
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       await Future.delayed(Duration(milliseconds: widget.delay));
+      if (!mounted) return;
       animationController.forward();
     });
   }

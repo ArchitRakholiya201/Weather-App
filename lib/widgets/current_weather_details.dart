@@ -6,7 +6,7 @@ import 'package:weather_app/utils/app_colors.dart';
 import 'package:weather_app/widgets/slide_animation.dart';
 
 class CurrentWeatherDetails extends StatefulWidget {
-  const CurrentWeatherDetails({Key? key}) : super(key: key);
+  const CurrentWeatherDetails({super.key});
 
   @override
   State<CurrentWeatherDetails> createState() => _CurrentWeatherDetailsState();

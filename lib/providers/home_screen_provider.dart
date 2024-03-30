@@ -15,6 +15,15 @@ class HomeScreenProvider extends ChangeNotifier {
   ForecastData? forecastData;
   Position? position;
 
+  final daysScrollController = ScrollController();
+
+  int _selectedDay = DateTime.now().day;
+  int get selectedDay => _selectedDay;
+  set selectedDay(int day) {
+    _selectedDay = day;
+    notifyListeners();
+  }
+
   Future<void> fetchTodayForecast() async {
     if (!isLoading) {
       isLoading = true;
@@ -31,6 +40,7 @@ class HomeScreenProvider extends ChangeNotifier {
       if (response != null && response.statusCode == 200) {
         final data = jsonDecode(response.body);
         forecastData = ForecastData.fromJson(data);
+        _selectedDay = forecastData!.foreCast.forecastDay.first.date.day;
       }
     }
     isLoading = false;

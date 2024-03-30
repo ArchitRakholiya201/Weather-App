@@ -16,8 +16,6 @@ class Api {
         Uri.parse(
             '$baseUrl/forecast.json?key=$apiKey&q=$latitude, $longitude&days=7&aqi=yes&alerts=yes'),
       );
-      print('====>>>> ${response.statusCode}');
-      print('====>>>> ${response.body}');
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
         debugPrint('---->>> data $data');

@@ -6,33 +6,20 @@ import 'package:weather_app/widgets/current_weather_details.dart';
 import 'package:weather_app/widgets/hours_forecaset.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   ConsumerState<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends ConsumerState<HomeScreen>
-    with SingleTickerProviderStateMixin {
-  late AnimationController animationController;
-
+class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 600),
-    );
-    animationController.forward();
+
     WidgetsBinding.instance.addPostFrameCallback((_) {
       ref.read(homeScreenProvider).fetchTodayForecast();
     });
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    animationController.dispose();
   }
 
   @override
