@@ -35,8 +35,6 @@ class HomeScreenProvider extends ChangeNotifier {
         latitude: position!.latitude,
         longitude: position!.longitude,
       );
-      // final d = await rootBundle.loadString('assets/data.json');
-      // final data = jsonDecode(d);
       if (response != null && response.statusCode == 200) {
         final data = jsonDecode(response.body);
         forecastData = ForecastData.fromJson(data);
